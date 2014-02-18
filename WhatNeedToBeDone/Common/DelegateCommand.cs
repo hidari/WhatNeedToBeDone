@@ -3,11 +3,8 @@ using System.Windows.Input;
 
 namespace Hidari0415.WhatNeedToBeDone.Common
 {
-
 	public class DelegateCommand : ICommand
 	{
-
-
 		private Action execute;
 		private Func<bool> canExecute;
 
@@ -20,7 +17,6 @@ namespace Hidari0415.WhatNeedToBeDone.Common
 		public DelegateCommand(Action execute)
 			: this(execute, () => true)
 		{
-
 		}
 
 		public DelegateCommand(Action execute, Func<bool> canExecute)
