@@ -4,12 +4,12 @@ using System.Windows.Input;
 namespace Hidari0415.WhatNeedToBeDone.Common
 {
 
-    public class DelegateCommand : ICommand
-    {
+	public class DelegateCommand : ICommand
+	{
 
 
-        private Action execute;
-        private Func<bool> canExecute;
+		private Action execute;
+		private Func<bool> canExecute;
 
 		public event EventHandler CanExecuteChanged
 		{
@@ -39,24 +39,24 @@ namespace Hidari0415.WhatNeedToBeDone.Common
 			this.canExecute = canExecute;
 		}
 
-        public void Execute(object parameter)
-        {
-            this.execute();
-        }
+		public void Execute(object parameter)
+		{
+			this.execute();
+		}
 
 		public bool CanExecute(object parameter)
 		{
 			return this.canExecute();
 		}
 
-        bool ICommand.CanExecute(object parameter)
-        {
-            return this.canExecute();
-        }
+		bool ICommand.CanExecute(object parameter)
+		{
+			return this.canExecute();
+		}
 
-        void ICommand.Execute(object parameter)
-        {
-            this.execute();
-        }
-    }
+		void ICommand.Execute(object parameter)
+		{
+			this.execute();
+		}
+	}
 }
