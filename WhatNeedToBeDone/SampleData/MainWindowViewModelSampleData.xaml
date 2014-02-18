@@ -1,0 +1,28 @@
+﻿<ViewModels:MainWindowViewModel xmlns:ViewModels="clr-namespace:Hidari0415.WhatNeedToBeDone.ViewModels" 
+								xmlns:Common="clr-namespace:Hidari0415.WhatNeedToBeDone.Common" 
+								xmlns:Models="clr-namespace:Hidari0415.WhatNeedToBeDone.Models" 
+								NewTodoContent="What need to be done?" 
+								Title="What need to be done?">
+	<ViewModels:MainWindowViewModel.AddNewTodoCommand>
+		<Common:DelegateCommand/>
+	</ViewModels:MainWindowViewModel.AddNewTodoCommand>
+	<ViewModels:MainWindowViewModel.TodoList>
+		<ViewModels:TodosViewModel>
+			<ViewModels:TodosViewModel.DeleteSelectedCommand>
+				<Common:DelegateCommand/>
+			</ViewModels:TodosViewModel.DeleteSelectedCommand>
+			<ViewModels:TodosViewModel.Todos>
+				<Models:Todo Content="雪だるまがイートイン" IsDone="True"/>
+				<Models:Todo Content="ブリキの缶と鰤のてりやき" IsDone="False"/>
+				<Models:Todo Content="ギター鳴らしながらキャバクラ" IsDone="True"/>
+				<Models:Todo Content="テスラコイルもハングリー" IsDone="False"/>
+				<Models:Todo Content="泥棒猫がデウスエクスマキナにキックオフ" IsDone="True"/>
+				<Models:Todo Content="サイレンと胡坐そして逆上がりの怒り" IsDone="False"/>
+				<Models:Todo Content="肉の広告が迫り小指で味見" IsDone="True"/>
+				<Models:Todo Content="トイレットペーパー被加算制約" IsDone="False"/>
+				<Models:Todo Content="病み上がりこぼし" IsDone="True"/>
+				<Models:Todo Content="ケータイのボタンを掛け違えた埴輪でローリングソバット" IsDone="False"/>
+			</ViewModels:TodosViewModel.Todos>
+		</ViewModels:TodosViewModel>
+	</ViewModels:MainWindowViewModel.TodoList>
+</ViewModels:MainWindowViewModel>

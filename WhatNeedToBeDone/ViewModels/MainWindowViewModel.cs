@@ -75,17 +75,6 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
             this.Title = App.ProductInfo.Title;
             this.TodoList = new TodosViewModel();
             this.NewTodoContent = "What need to be done?";
-            
-            #region Test Data
-            this.TodoList.Todos = new ObservableCollection<Todo>
-                {
-                    new Todo("テスト TODO1"),
-                    new Todo("テスト TODO2"),
-                    new Todo("テスト TODO3")
-                };
-
-            this.TodoList.Todos[1].IsDone = true;
-            #endregion
         }
 
     }
