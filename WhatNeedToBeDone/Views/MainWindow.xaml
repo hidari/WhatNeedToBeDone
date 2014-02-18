@@ -25,15 +25,15 @@
 	</Window.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="64*"/>
-			<RowDefinition Height="270*"/>
-			<RowDefinition Height="35*"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
 		</Grid.RowDefinitions>
 		<TextBox TextWrapping="Wrap" 
 				 Text="{Binding Path=NewTodoContent, UpdateSourceTrigger=PropertyChanged}" 
 				 VerticalAlignment="Top"
 				 Margin="10,10,10,0" 
-				 FontSize="24">
+				 FontSize="20">
 			<i:Interaction.Triggers>
 				<ei:KeyTrigger Key="Enter" ActiveOnFocus="True">
 					<i:InvokeCommandAction Command="{Binding Path=AddNewTodoCommand}"/>
