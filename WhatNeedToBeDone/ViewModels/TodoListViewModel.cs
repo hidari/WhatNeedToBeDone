@@ -21,8 +21,8 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		}
 		#endregion
 
+		#region UnCompletedCount 変更通知プロパティ
 		private int _UnCompletedCount;
-
 		public int UnCompletedCount
 		{
 			get { return _UnCompletedCount; }
@@ -32,7 +32,7 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 				this.RaisePropertyChanged("UnCompletedCount");
 			}
 		}
-
+		#endregion
 
 		public ObservableCollection<Todo> Todos { get; set; }
 
