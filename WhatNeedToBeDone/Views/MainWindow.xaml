@@ -29,8 +29,10 @@
 			<RowDefinition Height="auto"/>
 			<RowDefinition Height="auto"/>
 			<RowDefinition Height="auto"/>
+			<RowDefinition Height="auto"/>
 		</Grid.RowDefinitions>
-		<TextBox TextWrapping="Wrap" 
+		<TextBox Grid.Row="0"
+				 TextWrapping="Wrap" 
 				 Text="{Binding Path=NewTodoContent, UpdateSourceTrigger=PropertyChanged}" 
 				 VerticalAlignment="Top"
 				 Margin="10,10,10,0" 
@@ -41,15 +43,17 @@
 				</ei:KeyTrigger>
 			</i:Interaction.Triggers>
 		</TextBox>
+		<CheckBox Grid.Row="1" 
+				  Content="All Todo make done!" Margin="10,10,10,0"/>
 		<ListBox Margin="10,10,10,0" 
-				 Grid.Row="1" 
+				 Grid.Row="2" 
 				 VerticalAlignment="Top" 
 				 Height="250" 
 				 SelectionMode="Extended"
 				 ItemsSource="{Binding Path=TodoList.Todos}"
 				 ItemTemplate="{StaticResource TodoListTemplate}">
 		</ListBox>
-		<StackPanel Grid.Row="2" 
+		<StackPanel Grid.Row="3" 
 					Orientation="Horizontal" 
 					FlowDirection="RightToLeft" 
 					Margin="10,10,10,10">
@@ -59,7 +63,7 @@
 					Width="75"
 					Command="{Binding Path=TodoList.DeleteSelectedCommand}"/>
 		</StackPanel>
-		<StackPanel Grid.Row="3">
+		<StackPanel Grid.Row="4">
 			<TextBlock Padding="3,0,0,0" FontSize="13">
 				<Run Text="{Binding Path=TodoList.UnCompletedCount, Mode=OneWay}"/>
 				<Run Text=" tasks left, "/>
