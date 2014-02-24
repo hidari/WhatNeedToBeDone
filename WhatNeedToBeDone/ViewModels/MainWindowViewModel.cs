@@ -42,6 +42,7 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		}
 		#endregion
 
+		#region IsSelectedAll 変更通知プロパティ
 		private bool _IsSelectedAll;
 
 		public bool IsSelectedAll
@@ -53,10 +54,19 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 				{
 					this._IsSelectedAll = value;
 					this.RaisePropertyChanged("IsSelectedAll");
+					ToggleAllTodoCheckState();
 				}
 			}
 		}
 
+		private void ToggleAllTodoCheckState()
+		{
+			foreach (var item in this.TodoList.Todos)
+			{
+				item.IsDone = this.IsSelectedAll;
+			}
+		}
+		#endregion
 
 		public TodosViewModel TodoList { get; private set; }
 
