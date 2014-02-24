@@ -44,7 +44,9 @@
 			</i:Interaction.Triggers>
 		</TextBox>
 		<CheckBox Grid.Row="1" 
-				  Content="All Todo make done!" Margin="10,10,10,0"/>
+				  Content="All Todo make done!" 
+				  Margin="10,10,10,0"
+				  IsChecked="{Binding Path=IsSelectedAll}"/>
 		<ListBox Margin="10,10,10,0" 
 				 Grid.Row="2" 
 				 VerticalAlignment="Top" 
