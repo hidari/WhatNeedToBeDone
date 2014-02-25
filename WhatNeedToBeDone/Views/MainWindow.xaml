@@ -10,7 +10,7 @@
 		mc:Ignorable="d"
 		d:DataContext="{d:DesignData Source=../SampleData/MainWindowViewModelSampleData.xaml}"
 		Title="{Binding Path=Title}"
-		Width="300"
+		Width="350"
 		SnapsToDevicePixels="True"
 		TextOptions.TextFormattingMode="Display"
 		SizeToContent="Height">
@@ -47,11 +47,12 @@
 				  Content="All Todo make done!" 
 				  Margin="10,10,10,0"
 				  IsChecked="{Binding Path=IsSelectedAll}"/>
-		<ListBox Margin="10,10,10,0" 
+		<ListBox Margin="10,5,10,0" 
 				 Grid.Row="2" 
 				 VerticalAlignment="Top" 
-				 Height="250" 
+				 Height="300" 
 				 SelectionMode="Extended"
+				 BorderBrush="Transparent"
 				 ItemsSource="{Binding Path=TodoList.Todos}"
 				 ItemTemplate="{StaticResource TodoListTemplate}">
 		</ListBox>
