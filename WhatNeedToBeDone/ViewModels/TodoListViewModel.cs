@@ -21,6 +21,19 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		}
 		#endregion
 
+		#region UnCompletedCount 変更通知プロパティ
+		private int _UnCompletedCount;
+		public int UnCompletedCount
+		{
+			get { return _UnCompletedCount; }
+			set
+			{
+				this._UnCompletedCount = value;
+				this.RaisePropertyChanged("UnCompletedCount");
+			}
+		}
+		#endregion
+
 		public ObservableCollection<Todo> Todos { get; set; }
 
 		public TodosViewModel()
@@ -46,6 +59,7 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		private bool CanDeleteSelected()
 		{
 			this.SelectedCount = this.Todos.Count<Todo>((t) => t.IsDone == true);
+			this.UnCompletedCount = this.Todos.Count - this.SelectedCount;
 			return this.SelectedCount > 0;
 		}
 

@@ -7,7 +7,7 @@
 		<Common:DelegateCommand/>
 	</ViewModels:MainWindowViewModel.AddNewTodoCommand>
 	<ViewModels:MainWindowViewModel.TodoList>
-		<ViewModels:TodosViewModel>
+		<ViewModels:TodosViewModel SelectedCount="5" UnCompletedCount="5">
 			<ViewModels:TodosViewModel.DeleteSelectedCommand>
 				<Common:DelegateCommand/>
 			</ViewModels:TodosViewModel.DeleteSelectedCommand>
