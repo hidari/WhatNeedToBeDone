@@ -54,7 +54,6 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 				{
 					this._IsSelectedAll = value;
 					this.RaisePropertyChanged("IsSelectedAll");
-					ToggleAllTodoCheckState();
 				}
 			}
 		}
@@ -62,7 +61,6 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 
 		#region ToggleAllCheckStateCommand
 		private DelegateCommand _ToggleAllCheckStateCommand;
-
 		public DelegateCommand ToggleAllCheckStateCommand
 		{
 			get
