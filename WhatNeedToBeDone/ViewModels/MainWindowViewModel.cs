@@ -59,31 +59,6 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		}
 		#endregion
 
-		#region ToggleAllCheckStateCommand
-		private DelegateCommand _ToggleAllCheckStateCommand;
-		public DelegateCommand ToggleAllCheckStateCommand
-		{
-			get
-			{
-				if (this._ToggleAllCheckStateCommand == null)
-				{
-					this._ToggleAllCheckStateCommand = new DelegateCommand(ToggleAllTodoCheckState);
-				}
-
-				return this._ToggleAllCheckStateCommand;
-			}
-		}
-
-
-		private void ToggleAllTodoCheckState()
-		{
-			foreach (var item in this.TodoList.Todos)
-			{
-				item.IsDone = this.IsSelectedAll;
-			}
-		}
-		#endregion
-
 		public TodosViewModel TodoList { get; private set; }
 
 		#region AddNewTodoCommand
@@ -109,6 +84,31 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		private bool CanAddNewTodo()
 		{
 			return this.NewTodoContent != string.Empty;
+		}
+		#endregion
+
+		#region ToggleAllCheckStateCommand
+		private DelegateCommand _ToggleAllCheckStateCommand;
+		public DelegateCommand ToggleAllCheckStateCommand
+		{
+			get
+			{
+				if (this._ToggleAllCheckStateCommand == null)
+				{
+					this._ToggleAllCheckStateCommand = new DelegateCommand(ToggleAllTodoCheckState);
+				}
+
+				return this._ToggleAllCheckStateCommand;
+			}
+		}
+
+
+		private void ToggleAllTodoCheckState()
+		{
+			foreach (var item in this.TodoList.Todos)
+			{
+				item.IsDone = this.IsSelectedAll;
+			}
 		}
 		#endregion
 
