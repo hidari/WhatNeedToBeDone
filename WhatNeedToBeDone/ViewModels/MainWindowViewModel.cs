@@ -103,5 +103,16 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 			this.NewTodoContent = "What need to be done?";
 		}
 
+		private void ChangeIsSelectedAllValueIfListContainsNotSelectedTodo()
+		{
+			foreach (var item in this.TodoList.Todos)
+			{
+				if (!item.IsDone)
+				{
+					this.IsSelectedAll = false;
+					return;
+				}
+			}
+		}
 	}
 }
