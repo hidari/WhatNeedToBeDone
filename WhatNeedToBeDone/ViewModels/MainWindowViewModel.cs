@@ -58,6 +58,24 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 				}
 			}
 		}
+		#endregion
+
+		#region ToggleAllCheckStateCommand
+		private DelegateCommand _ToggleAllCheckStateCommand;
+
+		public DelegateCommand ToggleAllCheckStateCommand
+		{
+			get
+			{
+				if (this._ToggleAllCheckStateCommand == null)
+				{
+					this._ToggleAllCheckStateCommand = new DelegateCommand(ToggleAllTodoCheckState);
+				}
+
+				return this._ToggleAllCheckStateCommand;
+			}
+		}
+
 
 		private void ToggleAllTodoCheckState()
 		{
