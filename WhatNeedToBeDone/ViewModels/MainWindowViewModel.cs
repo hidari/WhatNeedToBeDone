@@ -119,21 +119,21 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 			this.NewTodoContent = "What need to be done?";
 		}
 
-		private DelegateCommand _ChangeIsSelectedAllStateCommand;
-		public DelegateCommand ChangeIsSelectedAllStateCommand
+		private DelegateCommand _ChangeSelectedAllStateCommand;
+		public DelegateCommand ChangeSelectedAllStateCommand
 		{
 			get
 			{
-				if (this._ChangeIsSelectedAllStateCommand == null)
+				if (this._ChangeSelectedAllStateCommand == null)
 				{
-					this._ChangeIsSelectedAllStateCommand = new DelegateCommand(ChangeIsSelectedAllValueIfListContainsNotSelectedTodo);
+					this._ChangeSelectedAllStateCommand = new DelegateCommand(ChackAllTodosState);
 				}
 
-				return _ChangeIsSelectedAllStateCommand;
+				return _ChangeSelectedAllStateCommand;
 			}
 		}
 
-		private void ChangeIsSelectedAllValueIfListContainsNotSelectedTodo()
+		private void ChackAllTodosState()
 		{
 			foreach (var item in this.TodoList.Todos)
 			{
