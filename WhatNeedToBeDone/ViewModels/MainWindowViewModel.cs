@@ -143,6 +143,8 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 					return;
 				}
 			}
+
+			this.IsSelectedAll = true;
 		}
 	}
 }
