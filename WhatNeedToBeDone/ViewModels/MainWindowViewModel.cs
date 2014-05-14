@@ -54,16 +54,7 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 				{
 					this._IsSelectedAll = value;
 					this.RaisePropertyChanged("IsSelectedAll");
-					ToggleAllTodoCheckState();
 				}
-			}
-		}
-
-		private void ToggleAllTodoCheckState()
-		{
-			foreach (var item in this.TodoList.Todos)
-			{
-				item.IsDone = this.IsSelectedAll;
 			}
 		}
 		#endregion
@@ -96,6 +87,31 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 		}
 		#endregion
 
+		#region ToggleAllCheckStateCommand
+		private DelegateCommand _ToggleAllCheckStateCommand;
+		public DelegateCommand ToggleAllCheckStateCommand
+		{
+			get
+			{
+				if (this._ToggleAllCheckStateCommand == null)
+				{
+					this._ToggleAllCheckStateCommand = new DelegateCommand(ToggleAllTodoCheckState);
+				}
+
+				return this._ToggleAllCheckStateCommand;
+			}
+		}
+
+
+		private void ToggleAllTodoCheckState()
+		{
+			foreach (var item in this.TodoList.Todos)
+			{
+				item.IsDone = this.IsSelectedAll;
+			}
+		}
+		#endregion
+
 		public MainWindowViewModel()
 		{
 			this.Title = App.ProductInfo.Title;
@@ -103,5 +119,32 @@ namespace Hidari0415.WhatNeedToBeDone.ViewModels
 			this.NewTodoContent = "What need to be done?";
 		}
 
+		private DelegateCommand _ChangeSelectedAllStateCommand;
+		public DelegateCommand ChangeSelectedAllStateCommand
+		{
+			get
+			{
+				if (this._ChangeSelectedAllStateCommand == null)
+				{
+					this._ChangeSelectedAllStateCommand = new DelegateCommand(ChackAllTodosState);
+				}
+
+				return _ChangeSelectedAllStateCommand;
+			}
+		}
+
+		private void ChackAllTodosState()
+		{
+			foreach (var item in this.TodoList.Todos)
+			{
+				if (!item.IsDone)
+				{
+					this.IsSelectedAll = false;
+					return;
+				}
+			}
+
+			this.IsSelectedAll = true;
+		}
 	}
 }
